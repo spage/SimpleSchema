@@ -1,0 +1,133 @@
+﻿<schema xmlns="urn:LiquidHub/SimpleSchema/2007/10" 
+        namespace="urn:LiquidHub/SimpleSchema/2007/10">
+
+  <doc>SimpleSchema expressed as SimpleSchema</doc>
+
+  <list name="schema">
+    <doc>
+      SimpleSchema declaration, root element.
+      Container for class, enum, list, export and doc elements.
+      Should specify @namespace attribute.
+    </doc>
+    <attribute name="namespace"/>
+    <item type="class"/>
+    <item type="enum"/>
+    <item type="list"/>
+    <item type="export"/>
+    <item type="doc"/>    
+  </list>
+  
+  <list name="class">
+    <doc>
+      Class declaration, child of schema element.
+      May contain field, attribute and doc elements.
+      Must specify @name attribute.
+      May specify @type attribute, should only specify native types.
+    </doc>
+    <attribute name="name" required="yes"/>
+    <attribute name="type"/>
+    <item type="attribute"/>
+    <item type="field"/>
+    <item type="doc"/>
+  </list>
+  
+  <list name="field">
+    <doc>
+      Field declaration, child of class element.
+      May contain attribute and doc elements.
+      Including a child attribute element creates an implied class declaration.
+      Must specify @name attribute.
+      May specify @type or @required attributes.
+      The @type attribute defaults to string.
+      The @required attribute defaults to yes.
+    </doc>
+    <attribute name="name" required="yes"/>
+    <attribute name="type"/>
+    <attribute name="required" type="yesno"/>
+    <item type="attribute"/>
+    <item type="doc"/>
+  </list>
+
+  <enum name="yesno">
+    <doc>Utility enumeration for yes/no values.</doc>
+    <value>yes</value>
+    <value>no</value>
+  </enum>
+
+  <class name="attribute">
+    <doc>
+      Attribute declaration, child of class, field and list elements.
+      Must specify @name attribute.
+      May specify @type or @required attributes.
+      The @type attribute defaults to string.
+      The @required attribute defaults to no.
+    </doc>
+    <attribute name="name" required="yes"/>
+    <attribute name="type"/>
+    <attribute name="required" type="yesno"/>
+  </class>
+
+  <list name="enum">
+    <doc>
+      Enumerated type declaration, child of schema element.
+      Container for value and doc elements.
+      Must specify @name attribute.
+      Must contain one or more value elements.
+    </doc>
+    <attribute name="name" required="yes"/>
+    <item type="value" required="yes"/>
+    <item type="doc"/>
+  </list>
+
+  <class name="value" type="string">
+    <doc>
+      Enumeration value declaration, child of enum element.      
+    </doc>
+  </class>
+
+  <list name="list">
+    <doc>
+      List declaration, child of schema element.
+      Container for item, attribute and doc elements.
+      Must specify @name attribute.
+      Must contain one or more item elements.      
+    </doc>
+    <attribute name="name" required="yes"/>
+    <item type="attribute"/>
+    <item type="item" required="yes"/>
+    <item type="doc"/>
+  </list>
+
+  <class name="item">
+    <doc>
+      List item declaration, child of list element.
+      Must specify @name or @type attributes.
+      The @name attribute defaults to @type if not present.
+      The @type attribute defaults to @name if not present.
+      May specify @required attribute.
+    </doc>
+    <attribute name="name"/>
+    <attribute name="type"/>
+    <attribute name="required" type="yesno"/>
+  </class>
+
+  <class name="export">
+    <doc>
+      Type export declaration, child of schema element.
+      Must specify @name or @type attributes.
+      The @name attribute defaults to @type if not present.
+      The @type attribute defaults to @name if not present.
+    </doc>
+    <attribute name="name"/>
+    <attribute name="type"/> 
+  </class>
+
+  <class name="doc" type="string">
+    <doc>
+      Documentation element, child of schema, class, field, enum and list elements.
+    </doc>
+  </class>
+
+  <export type="schema"/>
+
+</schema>
