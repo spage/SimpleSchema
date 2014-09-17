@@ -19,10 +19,7 @@
         <xsl:value-of select="@namespace"/>
         <xsl:if test="not(@namespace)">urn:unspecified</xsl:if>
       </xsl:variable> 
-      <xsl:variable name="tweedledee">
-        <xsl:element name="tweedledum" namespace="{$tns}"/>
-      </xsl:variable>
-      <xsl:copy-of select="$tweedledee/*/namespace::*[.=$tns]"/>      
+      <xsl:namespace name="" select="$tns"/>
       <xsl:attribute name="targetNamespace">
         <xsl:value-of select="$tns"/>
       </xsl:attribute>
