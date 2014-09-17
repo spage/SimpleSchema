@@ -1,8 +1,7 @@
-﻿<xsl:stylesheet version="1.0" exclude-result-prefixes="ss" 
+﻿<xsl:stylesheet version="2.0" exclude-result-prefixes="ss" 
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"                
-                xmlns:ss="urn:LayerExp/Schema/2014/10"
-                xmlns:ms="urn:schemas-microsoft-com:xslt">
+                xmlns:ss="urn:LayerExp/Schema/2014/10">
   
   <xsl:output method="xml" encoding="utf-8" />
 
@@ -23,7 +22,7 @@
       <xsl:variable name="tweedledee">
         <xsl:element name="tweedledum" namespace="{$tns}"/>
       </xsl:variable>
-      <xsl:copy-of select="ms:node-set($tweedledee)/*/namespace::*[.=$tns]"/>      
+      <xsl:copy-of select="$tweedledee/*/namespace::*[.=$tns]"/>      
       <xsl:attribute name="targetNamespace">
         <xsl:value-of select="$tns"/>
       </xsl:attribute>

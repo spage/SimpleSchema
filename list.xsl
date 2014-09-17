@@ -1,4 +1,4 @@
-﻿<xsl:stylesheet version="1.0" exclude-result-prefixes="ss"
+﻿<xsl:stylesheet version="2.0" exclude-result-prefixes="ss"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:ss="urn:LayerExp/Schema/2014/10">
