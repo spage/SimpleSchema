@@ -1,7 +1,7 @@
 ﻿<xsl:stylesheet version="1.0" exclude-result-prefixes="ss" 
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"                
-                xmlns:ss="urn:LiquidHub/SimpleSchema/2007/10"
+                xmlns:ss="urn:LayerExp/Schema/2014/10"
                 xmlns:ms="urn:schemas-microsoft-com:xslt">
   
   <xsl:output method="xml" encoding="utf-8" />
