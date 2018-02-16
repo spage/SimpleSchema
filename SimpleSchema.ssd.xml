@@ -1,5 +1,5 @@
-﻿<schema xmlns="urn:LiquidHub/SimpleSchema/2007/10" 
-        namespace="urn:LiquidHub/SimpleSchema/2007/10">
+﻿<schema xmlns="urn:LayerExp/Schema/2014/10" 
+        namespace="urn:LayerExp/Schema/2014/10">
 
   <doc>SimpleSchema expressed as SimpleSchema</doc>
 
